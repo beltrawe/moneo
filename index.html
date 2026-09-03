@@ -5,6 +5,17 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Moneo | Pijamas</title>
 <meta name="description" content="Encontre a Moneo no Instagram, WhatsApp e Facebook.">
+
+<!-- ÍCONE QUE APARECE NA ABA DO NAVEGADOR E NO GOOGLE (favicon) -->
+<link rel="icon" type="image/png" href="Logo Moneo.png">
+<link rel="apple-touch-icon" href="Logo Moneo.png">
+
+<!-- PRÉVIA AO COMPARTILHAR O LINK NO WHATSAPP/INSTAGRAM -->
+<meta property="og:title" content="Moneo | Pijamas">
+<meta property="og:description" content="Aonde o descanso ganha cuidado, conforto e estilo com pijamas de alta qualidade, leves e aconchegantes.">
+<meta property="og:image" content="og-image.png">
+<meta property="og:type" content="website">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Sora:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -23,13 +34,7 @@
     --font-body:'Sora', -apple-system, sans-serif;
   }
 
-
-
-
   *{box-sizing:border-box;}
-
-
-
 
   html,body{
     margin:0;
@@ -40,13 +45,7 @@
     -webkit-font-smoothing:antialiased;
   }
 
-
-
-
   /* ---------- IMAGEM DE FUNDO ---------- */
-
-
-
 
   #background-image{
     position:fixed;
@@ -61,7 +60,6 @@
     pointer-events:none;
   }
 
-
   .page{
     position:relative;
     z-index:2;
@@ -74,13 +72,7 @@
     min-height:100vh;
   }
 
-
-
-
   /* ---------- PERFIL ---------- */
-
-
-
 
   .logo-wrap{
     width:92px;
@@ -99,18 +91,12 @@
     animation-delay:.05s;
   }
 
-
-
-
   .logo-img{
     width:100%;
     height:100%;
     object-fit:cover;
     object-position:center;
   }
-
-
-
 
   .brand-name{
     font-family:var(--font-display);
@@ -126,9 +112,6 @@
     animation-delay:.18s;
   }
 
-
-
-
   .brand-desc{
     font-family:var(--font-body);
     font-weight:400;
@@ -143,13 +126,7 @@
     animation-delay:.30s;
   }
 
-
-
-
   /* ---------- DIVISOR "COSTURA" ---------- */
-
-
-
 
   .stitch{
     width:56px;
@@ -161,9 +138,6 @@
     animation-delay:.40s;
     position:relative;
   }
-
-
-
 
   .stitch::before,
   .stitch::after{
@@ -179,13 +153,7 @@
   .stitch::before{ left:-2px; }
   .stitch::after{ right:-2px; }
 
-
-
-
   /* ---------- LINKS (card inteiro = imagem de fundo) ---------- */
-
-
-
 
   .links{
     width:100%;
@@ -194,13 +162,10 @@
     gap:14px;
   }
 
-
-
-
   .link-card{
     position:relative;
     display:flex;
-    align-items:flex-end;
+    align-items:center;
     width:100%;
     height:100px;
     padding:16px 20px;
@@ -218,9 +183,6 @@
     -webkit-tap-highlight-color:transparent;
   }
 
-
-
-
   /* gradiente escuro por baixo do texto, pra qualquer foto ficar legível */
   .link-card::before{
     content:"";
@@ -229,9 +191,6 @@
     background:linear-gradient(to top, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.15) 55%, rgba(0,0,0,0) 100%);
     z-index:1;
   }
-
-
-
 
   .link-card span{
     position:relative;
@@ -244,44 +203,26 @@
     text-shadow:0 1px 6px rgba(0,0,0,0.35);
   }
 
-
-
-
   .link-card:nth-child(1){ animation-delay:.50s; }
   .link-card:nth-child(2){ animation-delay:.60s; }
   .link-card:nth-child(3){ animation-delay:.70s; }
-
-
-
 
   .link-card:hover{
     box-shadow:0 10px 24px var(--shadow);
     transform:translateY(-2px) scale(1.015);
   }
 
-
-
-
   .link-card:active{
     transform:scale(0.97);
     transition-duration:.1s;
   }
-
-
-
 
   .link-card:focus-visible{
     outline:2px solid var(--brown-500);
     outline-offset:3px;
   }
 
-
-
-
   /* ---------- RODAPÉ ---------- */
-
-
-
 
   .footer{
     margin-top:auto;
@@ -292,18 +233,12 @@
     animation-delay:.85s;
   }
 
-
-
-
   .footer p{
     margin:0 0 6px;
     font-size:0.74rem;
     color:var(--brown-500);
     letter-spacing:0.01em;
   }
-
-
-
 
   .footer a{
     color:var(--brown-500);
@@ -312,29 +247,17 @@
     transition:color .2s ease, border-color .2s ease;
   }
 
-
-
-
   .footer a:hover{
     color:var(--brown-700);
     border-color:var(--brown-700);
   }
 
-
-
-
   /* ---------- ANIMAÇÃO ---------- */
-
-
-
 
   @keyframes fadeUp{
     from{ opacity:0; transform:translateY(10px); }
     to{ opacity:1; transform:translateY(0); }
   }
-
-
-
 
   @media (prefers-reduced-motion: reduce){
     .brand-name, .brand-desc, .stitch, .link-card, .footer, .logo-wrap{
@@ -347,9 +270,6 @@
     }
   }
 
-
-
-
   @media (max-width:380px){
     .page{ padding:48px 18px 32px; }
     .brand-name{ font-size:2rem; }
@@ -358,74 +278,38 @@
 </head>
 <body>
 
-
-
-
   <div id="background-image"></div>
   <div class="video-overlay"></div>
 
-
-
-
   <main class="page">
-
-
-
 
     <div class="logo-wrap" aria-label="Logo Moneo">
       <img src="Logo Moneo.png" alt="Moneo" class="logo-img">
     </div>
 
-
-
-
     <h1 class="brand-name">Moneo</h1>
-
-
-
 
     <h3 class="brand-desc">
       Aonde o descanso ganha cuidado, conforto e estilo com pijamas de alta qualidade, leves e aconchegantes.
     </h3>
 
-
-
-
     <div class="stitch" aria-hidden="true"></div>
-
-
-
 
     <nav class="links" aria-label="Canais oficiais da Moneo">
 
-
-
-
-      <a class="link-card" style="background-image:url('Insta.png')" href="https://instagram.com/SUBSTITUIR_INSTAGRAM" target="_blank" rel="noopener noreferrer">
+      <a class="link-card" style="background-image:url('Insta.png')" href="https://www.instagram.com/usemoneo?igsi=bHE0dXkwM3RuM3Ro" target="_blank" rel="noopener noreferrer">
         <span>Instagram</span>
       </a>
 
-
-
-
-      <a class="link-card" style="background-image:url('Zap.png')" href="https://wa.me/SUBSTITUIR_WHATSAPP" target="_blank" rel="noopener noreferrer">
+      <a class="link-card" style="background-image:url('Zap.png')" href="https://wa.me/5514996464098" target="_blank" rel="noopener noreferrer">
         <span>WhatsApp</span>
       </a>
 
-
-
-
-      <a class="link-card" style="background-image:url('Face.png')" href="https://facebook.com/SUBSTITUIR_FACEBOOK" target="_blank" rel="noopener noreferrer">
+      <a class="link-card" style="background-image:url('Face.png')" href="https://www.facebook.com/share/14rPNshyNgF/" target="_blank" rel="noopener noreferrer">
         <span>Facebook</span>
       </a>
 
-
-
-
     </nav>
-
-
-
 
     <footer class="footer">
       <p>© Moneo 2026. Todos os direitos reservados.</p>
@@ -437,14 +321,7 @@
       </p>
     </footer>
 
-
-
-
   </main>
-
-
-
 
 </body>
 </html>
-
