@@ -7,8 +7,8 @@
 <meta name="description" content="Encontre a Moneo no Instagram, WhatsApp e Facebook.">
 
 <!-- ÍCONE QUE APARECE NA ABA DO NAVEGADOR E NO GOOGLE (favicon) -->
-<link rel="icon" type="image/png" href="Logo Moneo.png">
-<link rel="apple-touch-icon" href="Logo Moneo.png">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="favicon.png">
 
 <!-- PRÉVIA AO COMPARTILHAR O LINK NO WHATSAPP/INSTAGRAM -->
 <meta property="og:title" content="Moneo | Pijamas">
@@ -166,16 +166,14 @@
     position:relative;
     display:flex;
     align-items:center;
+    justify-content:space-between;
     width:100%;
     height:100px;
     padding:16px 20px;
     border-radius:18px;
     overflow:hidden;
     text-decoration:none;
-    background-color:var(--card);
-    background-size:cover;
-    background-position:center;
-    background-repeat:no-repeat;
+    background:linear-gradient(135deg, var(--brown-700), var(--brown-900));
     box-shadow:0 1px 3px var(--shadow);
     transition:transform .22s ease, box-shadow .22s ease;
     opacity:0;
@@ -183,16 +181,7 @@
     -webkit-tap-highlight-color:transparent;
   }
 
-  /* gradiente escuro por baixo do texto, pra qualquer foto ficar legível */
-  .link-card::before{
-    content:"";
-    position:absolute;
-    inset:0;
-    background:linear-gradient(to top, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.15) 55%, rgba(0,0,0,0) 100%);
-    z-index:1;
-  }
-
-  .link-card span{
+  .link-card .link-label{
     position:relative;
     z-index:2;
     color:#ffffcc;
@@ -201,6 +190,18 @@
     font-size:1rem;
     letter-spacing:0.01em;
     text-shadow:0 1px 6px rgba(0,0,0,0.35);
+  }
+
+  /* ícone fixo, sem esticar, alinhado à direita */
+  .link-card .link-icon{
+    position:relative;
+    z-index:2;
+    width:32px;
+    height:32px;
+    flex-shrink:0;
+    background-size:contain;
+    background-position:center;
+    background-repeat:no-repeat;
   }
 
   .link-card:nth-child(1){ animation-delay:.50s; }
@@ -297,16 +298,19 @@
 
     <nav class="links" aria-label="Canais oficiais da Moneo">
 
-      <a class="link-card" style="background-image:url('Insta.png')" href="https://www.instagram.com/usemoneo?igsi=bHE0dXkwM3RuM3Ro" target="_blank" rel="noopener noreferrer">
-        <span>Instagram</span>
+      <a class="link-card" href="https://www.instagram.com/usemoneo?igsi=bHE0dXkwM3RuM3Ro" target="_blank" rel="noopener noreferrer">
+        <span class="link-label">Instagram</span>
+        <span class="link-icon" style="background-image:url('Insta.png')"></span>
       </a>
 
-      <a class="link-card" style="background-image:url('Zap.png')" href="https://wa.me/5514996464098" target="_blank" rel="noopener noreferrer">
-        <span>WhatsApp</span>
+      <a class="link-card" href="https://wa.me/5514996464098" target="_blank" rel="noopener noreferrer">
+        <span class="link-label">WhatsApp</span>
+        <span class="link-icon" style="background-image:url('Zap.png')"></span>
       </a>
 
-      <a class="link-card" style="background-image:url('Face.png')" href="https://www.facebook.com/share/14rPNshyNgF/" target="_blank" rel="noopener noreferrer">
-        <span>Facebook</span>
+      <a class="link-card" href="https://www.facebook.com/share/14rPNshyNgF/" target="_blank" rel="noopener noreferrer">
+        <span class="link-label">Facebook</span>
+        <span class="link-icon" style="background-image:url('Face.png')"></span>
       </a>
 
     </nav>
