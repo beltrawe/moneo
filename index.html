@@ -6,11 +6,9 @@
 <title>Moneo | Pijamas</title>
 <meta name="description" content="Encontre a Moneo no Instagram, WhatsApp e Facebook.">
 
-<!-- ÍCONE QUE APARECE NA ABA DO NAVEGADOR E NO GOOGLE (favicon) -->
 <link rel="icon" type="image/png" href="favicon.png">
 <link rel="apple-touch-icon" href="favicon.png">
 
-<!-- PRÉVIA AO COMPARTILHAR O LINK NO WHATSAPP/INSTAGRAM -->
 <meta property="og:title" content="Moneo | Pijamas">
 <meta property="og:description" content="Aonde o descanso ganha cuidado, conforto e estilo com pijamas de alta qualidade, leves e aconchegantes.">
 <meta property="og:image" content="og-image.png">
@@ -45,8 +43,6 @@
     -webkit-font-smoothing:antialiased;
   }
 
-  /* ---------- IMAGEM DE FUNDO ---------- */
-
   #background-image{
     position:fixed;
     inset:0;
@@ -71,8 +67,6 @@
     align-items:center;
     min-height:100vh;
   }
-
-  /* ---------- PERFIL ---------- */
 
   .logo-wrap{
     width:92px;
@@ -126,8 +120,6 @@
     animation-delay:.30s;
   }
 
-  /* ---------- DIVISOR "COSTURA" ---------- */
-
   .stitch{
     width:56px;
     height:1px;
@@ -153,14 +145,14 @@
   .stitch::before{ left:-2px; }
   .stitch::after{ right:-2px; }
 
-  /* ---------- LINKS (card inteiro = imagem de fundo) ---------- */
-
   .links{
     width:100%;
     display:flex;
     flex-direction:column;
     gap:14px;
   }
+
+  /* ---------- CARD COM IMAGEM DE FUNDO ---------- */
 
   .link-card{
     position:relative;
@@ -173,13 +165,29 @@
     border-radius:18px;
     overflow:hidden;
     text-decoration:none;
-    background:linear-gradient(135deg, var(--brown-700), var(--brown-900));
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
     box-shadow:0 1px 3px var(--shadow);
     transition:transform .22s ease, box-shadow .22s ease;
     opacity:0;
     animation:fadeUp .6s ease forwards;
     -webkit-tap-highlight-color:transparent;
   }
+
+  /* overlay escuro por cima da imagem, pra manter contraste do texto/ícone */
+  .link-card::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:linear-gradient(135deg, rgba(91,69,49,0.7), rgba(104,72,48,0.7));
+    z-index:1;
+  }
+
+  /* AQUI VOCÊ TROCA CADA IMAGEM DE FUNDO */
+  .link-card:nth-child(1){ background-image:url('Insta.png'); }
+  .link-card:nth-child(2){ background-image:url('Zap.png'); }
+  .link-card:nth-child(3){ background-image:url('Face.png'); }
 
   .link-card .link-label{
     position:relative;
@@ -192,7 +200,6 @@
     text-shadow:0 1px 6px rgba(0,0,0,0.35);
   }
 
-  /* ícone fixo, sem esticar, alinhado à direita */
   .link-card .link-icon{
     position:relative;
     z-index:2;
@@ -229,8 +236,6 @@
     outline-offset:3px;
   }
 
-  /* ---------- RODAPÉ ---------- */
-
   .footer{
     margin-top:auto;
     padding-top:48px;
@@ -258,8 +263,6 @@
     color:var(--brown-700);
     border-color:var(--brown-700);
   }
-
-  /* ---------- ANIMAÇÃO ---------- */
 
   @keyframes fadeUp{
     from{ opacity:0; transform:translateY(10px); }
